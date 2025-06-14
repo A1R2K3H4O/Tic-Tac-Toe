@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom right, #ffec97, #ffb347);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Navbar */
+nav {
+  background-color: #222;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Game container */
+.gameContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+/* Grid container */
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 0;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+/* Each box */
+.box {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+  background-color: white;
+}
+
+/* Remove right and bottom borders for edge boxes */
+.box:nth-child(3n) {
+  border-right: none;
+}
+.box:nth-child(n+7) {
+  border-bottom: none;
+}
+
+/* Text below the grid */
+.info {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+/* Image box after win */
+.imgbox {
+  display: none;
+  margin-left: 20px;
+}
+
+.imgbox img {
+  height: 100px;
+  animation: pop 0.5s ease-in-out;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Turn and reset row */
+.gameInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#reset {
+  margin-left: 10px;
+  padding: 5px 15px;
+  font-size: 1rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#reset:hover {
+  background-color: #218838;
+}
